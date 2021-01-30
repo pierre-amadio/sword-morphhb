@@ -11,6 +11,5 @@ done
 rm -rf clean
 mkdir clean
 for i in `ls book` ; do
-  echo $i
   ./bin/cleanWNodes.py book/$i clean/
 done

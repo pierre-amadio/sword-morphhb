@@ -41,7 +41,8 @@ for link in soup.find_all("w"):
   m=re.search(".*?(\d+).*?",link["lemma"])
   if m:
     #print(m.group(1))
-    link["lemma"]="strong:H%s"%m.group(1)
+    #link["lemma"]="strong:H%s"%m.group(1)
+    link["lemma"]="%s"%m.group(1)
     a=1
   #else:
   #  print("Cannot parse '%s'"%link)
