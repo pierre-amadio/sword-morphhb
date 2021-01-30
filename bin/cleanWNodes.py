@@ -41,11 +41,23 @@ for link in soup.find_all("w"):
   m=re.search(".*?(\d+).*?",link["lemma"])
   if m:
     #print(m.group(1))
-    #link["lemma"]="strong:H%s"%m.group(1)
-    link["lemma"]="%s"%m.group(1)
-    a=1
-  #else:
-  #  print("Cannot parse '%s'"%link)
+    link["lemma"]="strong:H%s"%m.group(1)
+    #link["lemma"]="%s"%m.group(1)
+    try:
+      """
+        In passage such as Deut 6.4 things do not works as expected
+        <w id="05vGY" lemma="259" morph="HAcmsa" n="0">אֶחָֽ<seg type="x-large">ד</seg></w>
+      """
+      if(link.string.find("/")>-1):
+        link.string=link.string.replace("/","")
+    except:
+      print("What is going on with ")
+      print(link)
+      print(link.contents)
+      print(link.parent["osisID"])
+
+  if(len(link["morph"])!=0):
+    link["morph"]="oshm:%s"%link["morph"]
 
 outputFile="%s/%s"%(outputDir,shortName)
 with open(outputFile,"w",encoding='utf-8') as file:
