@@ -42,14 +42,16 @@ for link in soup.find_all("w"):
 
   #let's deal with all the <sub> content (such as Deut 6.4)
   #<w id="05vGY" lemma="259" morph="HAcmsa" n="0">אֶחָֽ<seg type="x-large">ד</seg></w>
-  for seg in link.find_all("seg"):
-    segContents=seg.contents
-    seg.decompose()
+  #problem when the seg is in the middle of the word as in psalm 80:14
+  #      <w id="193SD" lemma="m/3293 a" morph="HR/Ncmsa" n="1">מִ/יָּ֑<seg type="x-suspended">עַ</seg>ר</w>
+  if len(link.find_all("seg"))>=1:
     newString=""
-    for orig in link.contents:
-      newString+=orig
-    for s in segContents:
-      newString+=s
+    for elem in link:
+      if(elem.name=="seg"):
+        newString+=elem.string
+      else:
+        newString+=elem
+
     link.contents=[]
     link.string=newString
 

@@ -6,5 +6,15 @@ same problem with Job.38.15
 same with judge 18.30
 same with ps 80.14
 
+In psalm 80:14 should be mem iod ayin resh, it appears as mem iod resh ayin
 
+      <w id="193SD" lemma="m/3293 a" morph="HR/Ncmsa" n="1">מִ/יָּ֑<seg type="x-suspended">עַ</seg>ר</w>
+      <note n="7">Suspended letter(s). Shown as suspended letters without a superscript note number. </note>
 
+diatheke -b OSHB  -f FMT_OSIS -k Psalm 80:14 >
+Psalms 80:14: <milestone osisID="Ps.80.14" resp="v" sID="gen22419"/>  <w  savlm="strong:H3765">יכרסמנה</w> <w  savlm="strong:H2386">חזיר</w> <w  n="1" savlm="strong:H3293">מירע</w>  <w  savlm="strong:H2123">וזיז</w> <w  savlm="strong:H7704">שׂדי</w> <w  n="0" savlm="strong:H7462">ירענה</w><seg type="x-sof-pasuq">׃</seg> <milestone eID="gen22419" osisID="Ps.80.14" resp="v"/>
+(OSHB)
+
+In clean :
+ <w lemma="strong:H3293" morph="oshm:HR/Ncmsa" n="1">מִיָּ֑רעַ</w>
+      <note n="7">Suspended letter(s). Shown as suspended letters without a superscript note number. </note>
