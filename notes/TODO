@@ -1,2 +1,10 @@
 - clean "/" in variant as well.
 - check if the seb subtype tingy did work: Deut.6.4 Isa.44.14 Jer.39.13 Job.38.13 Job.38.15 Judg.18.30 Lev.11.42 Num.27.5 Prov.16.28 Ps.80.14
+
+seems to be a problem with Job.38.13 רְשָׁיםעִ֣ 
+same problem with Job.38.15
+same with judge 18.30
+same with ps 80.14
+
+
+
