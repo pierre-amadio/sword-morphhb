@@ -37,25 +37,33 @@ with open(inputFile) as fp:
   soup=BeautifulSoup(fp, features='xml')
 
 for link in soup.find_all("w"):
+  #Let's remove the id node.
   del(link["id"])
+
+  #let's deal with all the <sub> content (such as Deut 6.4)
+  #<w id="05vGY" lemma="259" morph="HAcmsa" n="0">אֶחָֽ<seg type="x-large">ד</seg></w>
+  for seg in link.find_all("seg"):
+    segContents=seg.contents
+    seg.decompose()
+    newString=""
+    for orig in link.contents:
+      newString+=orig
+    for s in segContents:
+      newString+=s
+    link.contents=[]
+    link.string=newString
+
+  #Let's remove any "/" 
+    if(link.string.find("/")>-1):
+      link.string=link.string.replace("/","")
+
+  #Let's be sure strong number are only number.
   m=re.search(".*?(\d+).*?",link["lemma"])
   if m:
     #print(m.group(1))
     link["lemma"]="strong:H%s"%m.group(1)
-    #link["lemma"]="%s"%m.group(1)
-    try:
-      """
-        In passage such as Deut 6.4 things do not works as expected
-        <w id="05vGY" lemma="259" morph="HAcmsa" n="0">אֶחָֽ<seg type="x-large">ד</seg></w>
-      """
-      if(link.string.find("/")>-1):
-        link.string=link.string.replace("/","")
-    except:
-      print("What is going on with ")
-      print(link)
-      print(link.contents)
-      print(link.parent["osisID"])
 
+  #Let's put the oshm prefix in the morph tag.
   if(len(link["morph"])!=0):
     link["morph"]="oshm:%s"%link["morph"]
 
