@@ -53,9 +53,10 @@ for link in soup.find_all("w"):
     link.contents=[]
     link.string=newString
 
-  #Let's remove any "/" 
-    if(link.string.find("/")>-1):
-      link.string=link.string.replace("/","")
+  #Let's get rid of "/"
+  if(link.string.find("/")>-1):
+    link.string=link.string.replace("/","")
+
 
   #Let's be sure strong number are only number.
   m=re.search(".*?(\d+).*?",link["lemma"])
