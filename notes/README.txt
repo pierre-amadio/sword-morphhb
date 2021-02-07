@@ -35,6 +35,10 @@ mkdir mod
 # 32 milestone
 # 64 extra canonical issues
 # 513 : general
-/usr/local/sword/bin/osis2mod mod morphhb.osis.xml -z z -v MT -d 618
+#
+#Also do not use normalisation
+#http://tracker.crosswire.org/browse/MOD-350
+
+/usr/local/sword/bin/osis2mod mod morphhb.osis.xml -N -z z -v MT -d 618
 
 
