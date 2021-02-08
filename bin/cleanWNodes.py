@@ -3,17 +3,17 @@
 """
 make some modification in the <w> node of a book file:
 
-<w lemma="c/1254 a" morph="HC/Vqw3ms" id="016kU">וַ/יִּבְרָ֣א</w>
-->
-<w lemma="1254 a" morph="HC/Vqw3ms" id="016kU">וַ/יִּבְרָ֣א</w>
+By expl, in Psalm 80:14
+<w lemma="m/3293 a" n="1" morph="HR/Ncmsa" id="193SD">מִ/יָּ<seg type="x-suspended">עַ</seg>ר</w>
+end up as:
+<w lemma="strong:H3293" morph="oshm:HR/Ncmsa">מִיָּעַר</w>
 
-<w lemma="5921 a" morph="HR" id="01CCj">עַל</w><seg type="x-maqqef">־</seg><w lemma="d/776" n="0.1" morph="HTd/Ncbsa" id="01gV8">הָ/אָ֔רֶץ</w>
-->
-<w lemma="5921" morph="HR" id="01CCj">עַל</w><seg type="x-maqqef">־</seg><w lemma="d/776" n="0.1" morph="HTd/Ncbsa" id="01gV8">הָ/אָ֔רֶץ</w>
+- remove the id attribute
+- remove the n attribute
+- remove  / in strings
+- remove non numerical character in strong numbers.
+- add morph: in the morph attribute
 
-
-let s extract only the integer from the lemma attribute (strong number)
-let s get rid of the id  attribute.
 first argument: book file
 second argument: result directory
 """
