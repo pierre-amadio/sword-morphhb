@@ -43,10 +43,7 @@ for link in soup.find_all("w"):
   #Let's remove n nodes.
   del(link["n"])
 
-  #let's deal with all the <sub> content (such as Deut 6.4)
-  #<w id="05vGY" lemma="259" morph="HAcmsa" n="0">אֶחָֽ<seg type="x-large">ד</seg></w>
-  #problem when the seg is in the middle of the word as in psalm 80:14
-  #      <w id="193SD" lemma="m/3293 a" morph="HR/Ncmsa" n="1">מִ/יָּ֑<seg type="x-suspended">עַ</seg>ר</w>
+  #let's deal with all the <seg> content (such as Deut 6.4 or Psalm 80:14
   if len(link.find_all("seg"))>=1:
     newString=""
     for elem in link:
