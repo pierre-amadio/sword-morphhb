@@ -10,6 +10,7 @@ end up as:
 
 - remove the id attribute
 - remove the n attribute
+- remove <seg> node within <w>
 - remove  / in strings
 - remove non numerical character in strong numbers.
 - add morph: in the morph attribute
