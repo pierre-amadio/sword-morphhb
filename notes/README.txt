@@ -28,7 +28,7 @@ wget http://www.crosswire.org/osis/osisCore.2.1.1.xsd
 xmllint --noout --schema osisCore.2.1.1.xsd morphhb.osis.xml
 
 #https://www.crosswire.org/sword/develop/swordmodule/
-rmdir mod
+rm -rf mod
 mkdir mod
 # 1 text so far
 # 8 book and chapter introduction are determined
