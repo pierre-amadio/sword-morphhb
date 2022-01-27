@@ -13,6 +13,7 @@ end up as:
 - remove <seg> node within <w>
 - remove  / in strings
 - remove non numerical character in strong numbers.
+- pad strong numbers so they always have the same lenght (H+5 digits)
 - add morph: in the morph attribute
 
 first argument: book file
@@ -64,8 +65,7 @@ for link in soup.find_all("w"):
   #Let's be sure strong number are only number.
   m=re.search(".*?(\d+).*?",link["lemma"])
   if m:
-    #print(m.group(1))
-    link["lemma"]="strong:H%s"%m.group(1)
+    link["lemma"]="strong:H%s"%m.group(1).rjust(5,"0")
 
   #Let's put the oshm prefix in the morph tag.
   if(len(link["morph"])!=0):
