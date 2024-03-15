@@ -1,6 +1,8 @@
 
 #where is the morphhb repository located ?
-MORPHHBREPO=/home/melmoth/dev/morphhb/
+# You ll find the original sources in the openscriptures's morphhb repository:
+# git clone git@github.com:openscriptures/morphhb.git
+MORPHHBREPO=/home/pierre/dev/morphhb/
 
 rm -rf book
 mkdir book
