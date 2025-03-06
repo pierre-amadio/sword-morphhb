@@ -65,7 +65,15 @@ for link in soup.find_all("w"):
   #Let's be sure strong number are only number.
   m=re.search(".*?(\d+).*?",link["lemma"])
   if m:
+    """
+    https://github.com/crosswire/xiphos/issues/1201#issuecomment-2701831379
+    H0853 Ok
+    H00853 No
+    H853 No
+
     link["lemma"]="strong:H%s"%m.group(1).rjust(5,"0")
+    """
+    link["lemma"]="strong:H0%s"%m.group(1)
 
   #Let's put the oshm prefix in the morph tag.
   if(len(link["morph"])!=0):
