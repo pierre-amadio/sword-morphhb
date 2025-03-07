@@ -25,9 +25,11 @@ done;
 
 echo "</osisText></osis>">>morphhb.osis.xml
 
-wget http://www.crosswire.org/osis/osisCore.2.1.1.xsd
+#wget http://www.crosswire.org/osis/osisCore.2.1.1.xsd
+wget http://www.crosswire.org/~dmsmith/osis/osisCore.2.1.1-cw-latest.xsd
 #Validate the files:
-xmllint --noout --schema osisCore.2.1.1.xsd morphhb.osis.xml
+xmllint --noout --schema osisCore.2.1.1-cw-latest.xsd morphhb.osis.xml
+
 
 #https://www.crosswire.org/sword/develop/swordmodule/
 rm -rf mod
